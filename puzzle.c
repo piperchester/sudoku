@@ -5,10 +5,8 @@
  * 1-based indexing. Thus row indices, column indices,
  * and digits being placed must all be in the range 1 .. 9.
  */
-
 #include <stdlib.h>
 #include <stdio.h>
-
 #include "puzzle.h"
 #include "bool.h"
 
@@ -26,7 +24,6 @@
  *   That is, the value was part of the initial puzzle layout and
  *   cannot be erased.
  */
-
 static short puzzle[10][10] ;
 static bool  fixed[10][10] ;
 
@@ -135,16 +132,14 @@ void configure(FILE *puzzle_file) {
  */
 void print_puzzle() {
 	int i;
-	print_dashes();	
-	for (i = 1; i < 10; i++)
-	{
+	print_dashes();
+
+	for (i = 1; i < 10; i++) {
 		print_row(i);
-		if (i % 3 == 0)
-		{
+		if (i % 3 == 0) {
 			print_dashes();
 		}
-	}
-	
+	}	
 }
 
 /*
@@ -215,10 +210,7 @@ static bool row_contains(int row, int digit) {
 	int i;
 	for (i = 1; i < 10; i++)
 	{
-		if (puzzle[row][i] == digit)
-			return TRUE;
-		else
-			return FALSE;
+		puzzle[row][i] == digit ? TRUE : FALSE;
 	}
 }
 

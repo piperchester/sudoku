@@ -4,24 +4,22 @@
  * Parses the arguments by parse_args() and makes the results available
  * via the puzzle_file() and echo_input() functions.
  */
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include "arguments.h"
 #include "bool.h"
 
-static void usage( char prog[] ) ;
-static void file_error( char prog[], char fname[]) ;
+static void usage(char prog[]) ;
+static void file_error(char prog[], char fname[]) ;
 
-static int echoing = FALSE ;	// are we echoing input?
-static FILE *sudoku_file ;	// handle for the sudoku data.
+static int echoing = FALSE;	// are we echoing input?
+static FILE *sudoku_file;	// handle for the sudoku data.
 
 /*
  * Parsing - call before any other functions.
  * Exits with a message if there are any problems.
  */
-
 void parse_args(int ac, char **av) {
 	int usage_ok ;
 	char *file_name ;
@@ -32,7 +30,7 @@ void parse_args(int ac, char **av) {
 	 * and exit on argument error.
 	 */
 	echoing = (ac == 3) && (strcmp("-e", av[1]) == 0) ;
-	usage_ok = (ac == 2) || echoing ;
+	usage_ok = (ac == 2) || echoing;
 
 	if( ! usage_ok ) {
 		usage( av[0] ) ;

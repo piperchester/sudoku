@@ -5,7 +5,6 @@
  * 1-based indexing. Thus row indices, column indices,
  * and digits being placed must all be in the range 1 .. 9.
  */
-
 #ifndef PUZZLE_H
 #define PUZZLE_H
 
@@ -16,7 +15,6 @@
  * An enumeration holding the status values that can be returned
  * from add_digit() and erase_digit().
  */
-
 typedef enum {
 	OP_OK ,		// add_digit / erase_digit ok
 	OP_BADARGS ,	// bad arguments to add_digit / erase_digit
